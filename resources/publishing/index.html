@@ -2541,6 +2541,10 @@
 
 <h1 id="publishing-this-site">Publishing this site<a class="headerlink" href="#publishing-this-site" title="Permanent link">&para;</a></h1>
 <p>This page is for the maintainers of the documentation. The site is a static <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a> build that lives in the <code>developer-docs/</code> folder of the <code>archy-agents-scope</code> repository.</p>
+<p>The site is published at <a href="https://architechcro.github.io/archy-agents-docs/">https://architechcro.github.io/archy-agents-docs/</a> from the public repository <code>architechcro/archy-agents-docs</code> (branch <code>gh-pages</code>, GitHub Pages). Publish a new version with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">DOCS_SITE_URL</span><span class="o">=</span>https://architechcro.github.io/archy-agents-docs<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>developer-docs/publish.sh<span class="w"> </span>https://github.com/architechcro/archy-agents-docs.git
+</code></pre></div>
 <h2 id="what-is-generated-and-what-is-written">What is generated and what is written<a class="headerlink" href="#what-is-generated-and-what-is-written" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -2584,19 +2588,19 @@
 <p><code>scripts/export_openapi.py</code> removes operator-only route groups (platform administration, operations console, sandbox, promotions, environment transitions) from the public document. Change <code>EXCLUDED_TAGS</code> in that script to adjust it.</p>
 </div>
 <h2 id="build-locally">Build locally<a class="headerlink" href="#build-locally" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>developer-docs
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>mkdocs<span class="w"> </span>serve<span class="w">                      </span><span class="c1"># live preview on http://127.0.0.1:8000</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict<span class="w">             </span><span class="c1"># the CI build; writes developer-docs/site/</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>developer-docs
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>mkdocs<span class="w"> </span>serve<span class="w">                      </span><span class="c1"># live preview on http://127.0.0.1:8000</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict<span class="w">             </span><span class="c1"># the CI build; writes developer-docs/site/</span>
 </code></pre></div>
 <p><code>--strict</code> turns warnings (broken links, missing anchors, unknown nav entries) into failures. Set <code>DOCS_SITE_URL</code> to the final public address before a production build so that <code>llms.txt</code> contains absolute links and the sitemap is correct:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">DOCS_SITE_URL</span><span class="o">=</span>https://docs.example.com<span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">DOCS_SITE_URL</span><span class="o">=</span>https://docs.example.com<span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
 </code></pre></div>
 <h2 id="update-after-an-api-change">Update after an API change<a class="headerlink" href="#update-after-an-api-change" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>scripts/export_openapi.py<span class="w">        </span><span class="c1"># refresh both snapshots</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>tests/test_developer_docs.py<span class="w">     </span><span class="c1"># confirm they are current</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">cd</span><span class="w"> </span>developer-docs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>poetry<span class="w"> </span>run<span class="w"> </span>python<span class="w"> </span>scripts/export_openapi.py<span class="w">        </span><span class="c1"># refresh both snapshots</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>poetry<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>tests/test_developer_docs.py<span class="w">     </span><span class="c1"># confirm they are current</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">cd</span><span class="w"> </span>developer-docs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
 </code></pre></div>
 <p>Review the diff of <code>developer-docs/openapi/openapi.json</code>: it is the API change log. If you changed behavior that a guide describes, update the guide too.</p>
 <h2 id="hosting-options">Hosting options<a class="headerlink" href="#hosting-options" title="Permanent link">&para;</a></h2>
@@ -2635,8 +2639,8 @@
 <li>Optionally add a custom domain.</li>
 </ol>
 <p>Publish from your machine:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">DOCS_SITE_URL</span><span class="o">=</span>https://&lt;owner&gt;.github.io/archy-agents-docs<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>developer-docs/publish.sh<span class="w"> </span>git@github.com:&lt;owner&gt;/archy-agents-docs.git
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">DOCS_SITE_URL</span><span class="o">=</span>https://&lt;owner&gt;.github.io/archy-agents-docs<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span>developer-docs/publish.sh<span class="w"> </span>git@github.com:&lt;owner&gt;/archy-agents-docs.git
 </code></pre></div>
 <p>The script requires <code>DOCS_SITE_URL</code>, builds the site in strict mode, clones the <code>gh-pages</code> branch of the target (or starts it if it does not exist), replaces its contents with the new build, keeps an existing <code>CNAME</code>, adds <code>.nojekyll</code>, commits and pushes. It never rewrites history and stops if the target cannot be reached.</p>
 <h3 id="publish-from-ci">Publish from CI<a class="headerlink" href="#publish-from-ci" title="Permanent link">&para;</a></h3>

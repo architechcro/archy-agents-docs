@@ -5717,6 +5717,13 @@ See the table in [Connect a client](../mcp/connect-clients.md#troubleshooting).
 
 This page is for the maintainers of the documentation. The site is a static [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) build that lives in the `developer-docs/` folder of the `archy-agents-scope` repository.
 
+The site is published at <https://architechcro.github.io/archy-agents-docs/> from the public repository `architechcro/archy-agents-docs` (branch `gh-pages`, GitHub Pages). Publish a new version with:
+
+```bash
+DOCS_SITE_URL=https://architechcro.github.io/archy-agents-docs \
+  developer-docs/publish.sh https://github.com/architechcro/archy-agents-docs.git
+```
+
 ## What is generated and what is written
 
 | Content | Source | Regenerate with |
