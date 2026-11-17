@@ -1,0 +1,52 @@
+# Archy Agents developer documentation
+
+> Archy Agents is a multi-tenant platform for RAG, AI agents, multi-agent workflows and an MCP server. These docs explain how to integrate with and build on it.
+
+Machine-readable entry points:
+
+- [OpenAPI specification](https://architechcro.github.io/archy-agents-docs/openapi.json): every public endpoint and schema
+- [Full text of the guides](https://architechcro.github.io/archy-agents-docs/llms-full.txt): guides, tutorials, MCP and concepts in one file
+
+## Documentation
+
+- [Archy Agents developer documentation](https://architechcro.github.io/archy-agents-docs/)
+- [Getting started](https://architechcro.github.io/archy-agents-docs/getting-started/)
+- [Core concepts](https://architechcro.github.io/archy-agents-docs/getting-started/concepts/)
+- [Run Archy locally](https://architechcro.github.io/archy-agents-docs/getting-started/local-setup/)
+- [Quickstart](https://architechcro.github.io/archy-agents-docs/getting-started/quickstart/)
+- [Architecture](https://architechcro.github.io/archy-agents-docs/architecture/)
+- [System overview](https://architechcro.github.io/archy-agents-docs/architecture/system-overview/)
+- [Components](https://architechcro.github.io/archy-agents-docs/architecture/components/)
+- [Flows](https://architechcro.github.io/archy-agents-docs/architecture/flows/)
+- [Guides](https://architechcro.github.io/archy-agents-docs/guides/)
+- [Authentication and tokens](https://architechcro.github.io/archy-agents-docs/guides/authentication/)
+- [Provisioning tenants and users](https://architechcro.github.io/archy-agents-docs/guides/provisioning/)
+- [LLM providers and models](https://architechcro.github.io/archy-agents-docs/guides/llm-providers/)
+- [Knowledge bases](https://architechcro.github.io/archy-agents-docs/guides/knowledge-bases/)
+- [Agents](https://architechcro.github.io/archy-agents-docs/guides/agents/)
+- [Workflows](https://architechcro.github.io/archy-agents-docs/guides/workflows/)
+- [Composite workflow graphs](https://architechcro.github.io/archy-agents-docs/guides/composite-workflows/)
+- [Running and streaming](https://architechcro.github.io/archy-agents-docs/guides/running-and-streaming/)
+- [External MCP servers and skills](https://architechcro.github.io/archy-agents-docs/guides/mcp-servers-for-agents/)
+- [Sessions, artifacts and usage](https://architechcro.github.io/archy-agents-docs/guides/sessions-artifacts-usage/)
+- [Errors, limits and practices](https://architechcro.github.io/archy-agents-docs/guides/errors-and-limits/)
+- [Tutorials](https://architechcro.github.io/archy-agents-docs/tutorials/)
+- [Support assistant with RAG](https://architechcro.github.io/archy-agents-docs/tutorials/support-assistant/)
+- [Research and write pipeline](https://architechcro.github.io/archy-agents-docs/tutorials/research-pipeline/)
+- [Onboard customers from your backend](https://architechcro.github.io/archy-agents-docs/tutorials/provision-from-your-backend/)
+- [Human approval checkpoint](https://architechcro.github.io/archy-agents-docs/tutorials/human-approval/)
+- [MCP](https://architechcro.github.io/archy-agents-docs/mcp/)
+- [Connect a client](https://architechcro.github.io/archy-agents-docs/mcp/connect-clients/)
+- [Build with the MCP SDK](https://architechcro.github.io/archy-agents-docs/mcp/python-sdk/)
+- [API reference](https://architechcro.github.io/archy-agents-docs/reference/)
+- [Conventions](https://architechcro.github.io/archy-agents-docs/reference/conventions/)
+- [Resources](https://architechcro.github.io/archy-agents-docs/resources/)
+- [Client code](https://architechcro.github.io/archy-agents-docs/resources/client-code/)
+- [For AI agents](https://architechcro.github.io/archy-agents-docs/resources/for-ai-agents/)
+- [Troubleshooting](https://architechcro.github.io/archy-agents-docs/resources/troubleshooting/)
+- [Publishing this site](https://architechcro.github.io/archy-agents-docs/resources/publishing/)
+
+## API reference
+
+- [Endpoint index](https://architechcro.github.io/archy-agents-docs/reference/endpoints/): all operations by group
+- [Conventions](https://architechcro.github.io/archy-agents-docs/reference/conventions/): authentication, tenancy, errors, streaming
